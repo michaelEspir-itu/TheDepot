@@ -23,7 +23,8 @@ export const About = () => {
                         <tr>
                             <th>Mercedes Benz</th>
                             <th>Lexus</th>
-                            <th>Tesla</th>
+                            
+                            
                         </tr>
 
                     </thead>
@@ -39,10 +40,9 @@ export const About = () => {
                             <td>GX450</td>
                         </tr>
 
-                        <tr>    
-                            <td>M Model</td>
-                            <td>S Model</td>
-                        </tr>
+                        
+
+                      
 
                     </tbody>
                 </Table>

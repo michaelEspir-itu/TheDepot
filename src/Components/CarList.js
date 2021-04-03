@@ -18,21 +18,21 @@ export class Carlist extends React.Component {
         this.setState({cars});
     };
 
-    updateCars = async(updateCars) => {
+    updateCars = async(car) => {
         console.log('Got to updateCars!');
-        await carsApi.post(updateCars);
+        await carsApi.update(car);
         this.fetchCars();
     }
 
-    removeCar = async(car_id) => {
+    deleteCar = async(car_id) => {
             await carsApi.delete(car_id);
             this.fetchCars();
     }
 
-    addNewCar = (car, model) => {
+    addNewCar = async(car) => {
         console.log('car', car);
-        console.log('model',model);
-        this.updateCars({...car});
+        await carsApi.create(car);
+        await this.fetchCars();
     }
     updateCar = async(existingCarData,car_id) =>{
         console.log('existingCarData', existingCarData);
@@ -43,17 +43,21 @@ export class Carlist extends React.Component {
 
     render (){
         console.log(this.state.cars);
-        return (
-            <div>
-                <h1>Car List</h1>
-                {this.state.cars.map((car) =>(
-                    <Car model={car}
+        const cars = this.state.cars.map((car, key) =>
+                    <Car key = {key} model = {car.model}
+                                     brand = {car.brand}
+                                     year= {car.year}
+                                     miles= {car.miles}
+                                     price= {car.price}
                                 updateCars={this.updateCars}
-                                removeCar={this.removeCar}
+                                removeCar={this.deleteCar}
                                 updateCar={this.updateCar}
                 />
-                ))
-                }
+                )
+                return(
+                <div>
+                    <hi>Car List</hi>
+                    {cars}
                 <NewCarForm addNewCar={this.addNewCar}/>
                 <br/>
             </div>
