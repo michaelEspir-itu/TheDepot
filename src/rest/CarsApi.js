@@ -22,7 +22,7 @@ class CarsApi {
                 brand: car.brand,
                 year: car.year,
                 miles: car.miles,
-                price: car.price
+                price: car.price,
             }
             const resp = await fetch(`${CARS_ENDPOINT}/${car._id}`, {
                 method: 'PUT',

@@ -17,35 +17,36 @@ export const About = () => {
                     </p>
                     These are the list of cars I really like:
                 </div>
-                <Table stripped border hover bordred>
-                    <thead>
-
-                        <tr>
-                            <th>Mercedes Benz</th>
-                            <th>Lexus</th>
-                            
-                            
-                        </tr>
-
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>C class</td>
-                            <td>S class</td>
-                        </tr>
-
-                        <tr>
-                            <td>RX350</td>
-                            <td>GX450</td>
-                        </tr>
-
-                        
-
-                      
-
-                    </tbody>
-                </Table>
+                <Table striped bordered hover size="sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Cars</th>
+      <th>Model Name</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Mercedes Benz</td>
+      <td>C Class</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Lexus</td>
+      <td>RX350</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Tesla</td>
+      <td>S Model</td>
+      <td>2019</td>
+    </tr>
+  </tbody>
+</Table>
             </div>
         </Container>
     )

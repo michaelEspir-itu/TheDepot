@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
-export default class UpdateCarForm extends React.Component {
+ export default class UpdateCarForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +10,8 @@ export default class UpdateCarForm extends React.Component {
             year: props.year,
             miles: props.miles,
             price: props.price,
-            _id: props._id
+            _id: props._id,
+			car_id: props.car_id
         }
 
         this.handleChange = this.handleChange.bind(this);

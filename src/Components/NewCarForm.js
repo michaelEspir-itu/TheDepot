@@ -3,7 +3,7 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
 /**
- * Contrast this with the edit form...in this, we demo use of functional components
+ * Contrast this with the update form...in this, we demo use of functional components
  * and hooks (useState)
  */
 export const NewCarForm = (props) => {
@@ -51,3 +51,5 @@ export const NewCarForm = (props) => {
         </form>
     );
 }
+
+export default NewCarForm;

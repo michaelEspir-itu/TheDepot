@@ -1,7 +1,8 @@
 import React from 'react';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import {UpdateCarForm} from './UpdateCarForm';
+import UpdateCarForm from './UpdateCarForm';
 
 export default class Car extends React.Component {
     constructor(props) {
@@ -22,7 +23,8 @@ export default class Car extends React.Component {
     render() {
         return (
             <div>
-                <Card>
+               
+                    <Card>
                 <Card.Body>
                     <Card.Title>{this.props.model} {this.props.brand}</Card.Title>
                     <Card.Text> Year:{this.props.year} <br/> {this.props.miles} miles<br/>
@@ -33,7 +35,9 @@ export default class Car extends React.Component {
                     <Button variant="danger" onClick={this.handleDeleteClick}>Delete</Button><br/>
                 
                     </Card>
-<br></br>            </div>
+                    
+<br></br>   
+</div>         
         
         );
     }

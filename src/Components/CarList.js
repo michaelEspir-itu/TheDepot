@@ -3,11 +3,14 @@ import carsApi from '../rest/CarsApi';
 import Car from '../Components/Car.js';
 import {NewCarForm} from './NewCarForm';
 
-export class Carlist extends React.Component {
-    
-    state = {
+export  default class Carlist extends React.Component {
+    constructor(props){
+        super(props);
+    this.state = {
         cars:[]
-    };
+    }
+    
+}
 
     componentDidMount(){
         this.fetchCars();
@@ -30,33 +33,33 @@ export class Carlist extends React.Component {
     }
 
     addNewCar = async(car) => {
-        console.log('car', car);
+        console.log('newCarData', car);
         await carsApi.create(car);
         await this.fetchCars();
     }
     updateCar = async(existingCarData,car_id) =>{
         console.log('existingCarData', existingCarData);
-        console.log('car_id', car_id);
+        console.log('car_id',car_id);
         await carsApi.update(existingCarData,car_id);
         this.fetchCars();
     }
 
     render (){
-        console.log(this.state.cars);
         const cars = this.state.cars.map((car, key) =>
                     <Car key = {key} model = {car.model}
                                      brand = {car.brand}
                                      year= {car.year}
                                      miles= {car.miles}
                                      price= {car.price}
+                                     _id = {car._id}
                                 updateCars={this.updateCars}
-                                removeCar={this.deleteCar}
+                                deleteCar={this.deleteCar}
                                 updateCar={this.updateCar}
                 />
                 )
                 return(
                 <div>
-                    <hi>Car List</hi>
+                    <h1>Car List</h1>
                     {cars}
                 <NewCarForm addNewCar={this.addNewCar}/>
                 <br/>
@@ -64,6 +67,4 @@ export class Carlist extends React.Component {
         )
     };
 }
-
-export default Carlist;
 
