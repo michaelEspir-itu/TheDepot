@@ -9,13 +9,13 @@ export const About = () => {
                 <h1>About The Depot</h1>
                 <div>
                     <p>
-                        I loved Cars since I was a kid. I always dreamed of driving
-                        a sports car one day and I did when I turned 26. Cars for me
+                        I loved cars since I was a kid. I always dream of driving
+                        a sports car one day and I was able to drive one when I turned 26. Cars for me
                         is a a machine that must be respected and not taken for granted.
-                        That's why for my final project, I want to be able to put on file
-                        the cars I want to drive and hopefully buy in the future.
+                        That's why for my final project, I want to create a listing 
+                        of the cars I want to drive and hopefully own all of them in the future.
                     </p>
-                    These are the list of cars I really like:
+                    
                 </div>
                 <Table striped bordered hover size="sm">
   <thead>

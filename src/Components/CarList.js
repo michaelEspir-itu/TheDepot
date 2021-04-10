@@ -3,6 +3,8 @@ import carsApi from '../rest/CarsApi';
 import Car from '../Components/Car.js';
 import {NewCarForm} from './NewCarForm';
 
+// this is where the functions work so they can process the information given to them.
+
 export  default class Carlist extends React.Component {
     constructor(props){
         super(props);
@@ -37,10 +39,9 @@ export  default class Carlist extends React.Component {
         await carsApi.create(car);
         await this.fetchCars();
     }
-    updateCar = async(existingCarData,car_id) =>{
+    updateCar = async(existingCarData) =>{
         console.log('existingCarData', existingCarData);
-        console.log('car_id',car_id);
-        await carsApi.update(existingCarData,car_id);
+        await carsApi.update(existingCarData);
         this.fetchCars();
     }
 
@@ -59,7 +60,7 @@ export  default class Carlist extends React.Component {
                 )
                 return(
                 <div>
-                    <h1>Car List</h1>
+                    <h4>Car List</h4>
                     {cars}
                 <NewCarForm addNewCar={this.addNewCar}/>
                 <br/>

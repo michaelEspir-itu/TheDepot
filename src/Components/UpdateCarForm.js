@@ -1,5 +1,8 @@
 import React from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import Container from'react-bootstrap/Container';
+
+// this is where the update of information is done
 
  export default class UpdateCarForm extends React.Component {
     constructor(props) {
@@ -11,7 +14,6 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
             miles: props.miles,
             price: props.price,
             _id: props._id,
-			car_id: props.car_id
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,6 +37,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
 
     render() {
         return (
+            <Container>
+			
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="modelInput">Model:</label>
@@ -60,6 +64,8 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.css';
                 </div>
                 <button type="submit" className="btn btn-success">Update</button>
             </form>
+            </Container>
+			
         );
     }
 }

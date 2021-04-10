@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import Container from'react-bootstrap/Container';
 
 
 /**
@@ -19,6 +20,7 @@ export const NewCarForm = (props) => {
     }
 
     return (
+        <Container>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="modelInput">Model:</label>
@@ -49,6 +51,7 @@ export const NewCarForm = (props) => {
             </div>
             <button type="submit" className="btn btn-info">Add Car</button>
         </form>
+        </Container>
     );
 }
 

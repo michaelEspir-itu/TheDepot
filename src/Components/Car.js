@@ -4,6 +4,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import UpdateCarForm from './UpdateCarForm';
 
+// this is the process of adding the information to the system
+
 export default class Car extends React.Component {
     constructor(props) {
         super(props);
